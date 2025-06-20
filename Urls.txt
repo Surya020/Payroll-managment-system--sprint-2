@@ -1,0 +1,114 @@
+TASK:
+----------------------------------------------------------
+Employee 
+	-> Add Employee
+	-> Login Employee
+	-> Search By Employee Id
+	-> Search By UserName
+	-> Delete Employee
+ 
+Payroll
+	-> Add Payroll(Date)
+	-> Show All History Payroll employee
+	-> Search Payroll by date
+---------------------------------------------------------
+
+1.Employee
+
+a) Add Employee: http://localhost:8080/api/employees
+
+{
+  "username": "Vishnu",
+  "password": "password123",
+  "name": "Vishnu S",
+  "email": "vishnu@example.com",
+  "role": "EMPLOYEE"
+}
+
+{
+    "id": 11,
+    "username": "Vishnu",
+    "password": "password123",
+    "name": "Vishnu S",
+    "email": "vishnu@example.com",
+    "role": "EMPLOYEE"
+}
+
+b)Login Employee: http://localhost:8080/api/employees/login
+
+{
+  "username": "Praveen",
+  "password": "password123"
+}
+{
+    "id": 6,
+    "username": "Praveen",
+    "password": "password123",
+    "name": "Praveen S",
+    "email": "praveen@example.com",
+    "role": "EMPLOYEE"
+}
+
+c)Search Employee By ID: 
+
+http://localhost:8080/api/employees/1
+http://localhost:8080/api/employees/3
+http://localhost:8080/api/employees/6
+http://localhost:8080/api/employees/7
+http://localhost:8080/api/employees/8
+http://localhost:8080/api/employees/11
+
+d)Search Employee By Username: 
+
+http://localhost:8080/api/employees/username/Surya
+http://localhost:8080/api/employees/username/Monish
+http://localhost:8080/api/employees/username/Praveen
+http://localhost:8080/api/employees/username/Sanjai
+http://localhost:8080/api/employees/username/vasanth
+http://localhost:8080/api/employees/username/Vishnu
+
+e)Delete Employee:
+
+http://localhost:8080/api/employees/2
+
+--------------------------------------------------------
+
+2.Payroll
+
+a)Add Payroll: http://localhost:8080/api/payrolls
+
+{
+  "employee": { "id": 8 },
+  "date": "2025-06-19",
+  "amount": 30000.0,
+  "description": "May Salary"
+}
+
+{
+    "id": 5,
+    "employee": {
+        "id": 8,
+        "username": null,
+        "password": null,
+        "name": null,
+        "email": null,
+        "role": null
+    },
+    "date": "2025-06-19",
+    "amount": 30000.0,
+    "description": "May Salary"
+}
+
+b)View Payroll By emp ID
+
+http://localhost:8080/api/payrolls/employee/1
+http://localhost:8080/api/payrolls/employee/3
+http://localhost:8080/api/payrolls/employee/6
+http://localhost:8080/api/payrolls/employee/7
+http://localhost:8080/api/payrolls/employee/8
+http://localhost:8080/api/payrolls/employee/11
+
+c)View Payroll by Date: 
+
+http://localhost:8080/api/payrolls/date/2025-05-19
+http://localhost:8080/api/payrolls/date/2025-06-19
